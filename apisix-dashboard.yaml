@@ -119,10 +119,14 @@ data:
         access_log:
           file_path: /dev/stdout
     authentication:
-      secert
+      secert: secert
       expire_time: 3600
       users:
         - username: admin
           password: admin
-    plugins:                          # plugin list (sorted in alphabetical order)
-      - server-info
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: apisix-dashboard
+  namespace: default
